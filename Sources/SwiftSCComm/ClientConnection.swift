@@ -11,7 +11,7 @@ import Network
 @available(iOS 12.0, *)
 public class ClientConnection {
 
-    let  nwConnection: NWConnection
+    let nwConnection: NWConnection
     let queue = DispatchQueue(label: "Client connection Q")
 
     public init(nwConnection: NWConnection) {

@@ -10,7 +10,7 @@ import Network
 
 @available(iOS 12.0, *)
 public class Client {
-    let connection: ClientConnection
+    public let connection: ClientConnection
     let host: NWEndpoint.Host
     let port: NWEndpoint.Port
 
