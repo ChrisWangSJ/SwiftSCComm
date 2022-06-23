@@ -15,7 +15,7 @@ public class Server {
 
     private var connectionsByID: [Int: ServerConnection] = [:]
 
-    init(port: UInt16) {
+    public init(port: UInt16) {
         self.port = NWEndpoint.Port(rawValue: port)!
         listener = try! NWListener(using: .tcp, on: self.port)
     }

@@ -14,7 +14,7 @@ public class Client {
     let host: NWEndpoint.Host
     let port: NWEndpoint.Port
 
-    init(host: String, port: UInt16) {
+    public init(host: String, port: UInt16) {
         self.host = NWEndpoint.Host(host)
         self.port = NWEndpoint.Port(rawValue: port)!
         let nwConnection = NWConnection(host: self.host, port: self.port, using: .tcp)
