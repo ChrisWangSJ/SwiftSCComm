@@ -21,21 +21,21 @@ public class Client {
         connection = ClientConnection(nwConnection: nwConnection)
     }
 
-    func start() {
+    public func start() {
         print("Client started \(host) \(port)")
         connection.didStopCallback = didStopCallback(error:)
         connection.start()
     }
 
-    func stop() {
+    public func stop() {
         connection.stop()
     }
 
-    func send(data: Data) {
+    public func send(data: Data) {
         connection.send(data: data)
     }
 
-    func didStopCallback(error: Error?) {
+    public func didStopCallback(error: Error?) {
         if error == nil {
             exit(EXIT_SUCCESS)
         } else {

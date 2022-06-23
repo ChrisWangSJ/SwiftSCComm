@@ -14,13 +14,13 @@ public class ClientConnection {
     let  nwConnection: NWConnection
     let queue = DispatchQueue(label: "Client connection Q")
 
-    init(nwConnection: NWConnection) {
+    public init(nwConnection: NWConnection) {
         self.nwConnection = nwConnection
     }
 
     var didStopCallback: ((Error?) -> Void)? = nil
 
-    func start() {
+    public func start() {
         print("connection will start")
         nwConnection.stateUpdateHandler = stateDidChange(to:)
         setupReceive()
@@ -56,7 +56,7 @@ public class ClientConnection {
         }
     }
 
-    func send(data: Data) {
+    public func send(data: Data) {
         nwConnection.send(content: data, completion: .contentProcessed( { error in
             if let error = error {
                 self.connectionDidFail(error: error)

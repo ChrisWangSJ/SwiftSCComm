@@ -20,14 +20,14 @@ public class Server {
         listener = try! NWListener(using: .tcp, on: self.port)
     }
 
-    func start() throws {
+    public func start() throws {
         print("Server starting...")
         listener.stateUpdateHandler = self.stateDidChange(to:)
         listener.newConnectionHandler = self.didAccept(nwConnection:)
         listener.start(queue: .main)
     }
 
-    func stateDidChange(to newState: NWListener.State) {
+    public func stateDidChange(to newState: NWListener.State) {
         switch newState {
         case .ready:
           print("Server ready.")
