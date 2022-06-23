@@ -8,6 +8,7 @@
 import Foundation
 import Network
 
+@available(macOS 10.14, *)
 @available(iOS 12.0, *)
 public class ServerConnection {
     //The TCP maximum package size is 64K 65536
